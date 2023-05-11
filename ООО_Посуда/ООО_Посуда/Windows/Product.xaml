@@ -1,0 +1,46 @@
+﻿<Window x:Class="ООО_Посуда.Windows.Product"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ООО_Посуда.Windows"
+        mc:Ignorable="d"
+       Title="Продукты" Height="800" Width="1400" FontSize="20" FontFamily="Comic Sans MS" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="#FF76E383">
+                <TextBlock VerticalAlignment="Center">Поиск:</TextBlock>
+                <Label/>
+                <TextBox x:Name="Search" Width="300" TextChanged="Search_TextChanged"/>
+                <Label/>
+                <TextBlock VerticalAlignment="Center">Фильтрация:</TextBlock>
+                <Label/>
+                <ComboBox x:Name="Filtration" Width="200" DropDownClosed="Filtration_DropDownClosed">
+                    <ComboBoxItem>Все диапазоны</ComboBoxItem>
+                    <ComboBoxItem>0-9.99%</ComboBoxItem>
+                    <ComboBoxItem>10-14.99%</ComboBoxItem>
+                    <ComboBoxItem>15% и больше</ComboBoxItem>
+                </ComboBox>
+                <Label/>
+                <TextBlock VerticalAlignment="Center">Сортировка:</TextBlock>
+                <Label/>
+                <StackPanel>
+                    <RadioButton x:Name="Asc" Checked="Asc_Checked">По возрастанию</RadioButton>
+                    <RadioButton x:Name="Desc" Checked="Desc_Checked">По убыванию</RadioButton>
+                </StackPanel>
+                <Label/>
+                <Button x:Name="Add" Background="#FF498C51" Click="Add_Click">Добавить</Button>
+                <Label/>
+                <Button x:Name="Delete" Background="#FF498C51" Click="Delete_Click">Удалить</Button>
+                <Label/>
+                <Button x:Name="Edit" Background="#FF488C51" Click="Edit_Click">Изменить</Button>
+            </StackPanel>
+            <Label/>
+            <ScrollViewer Height="700" Width="1400">
+                <StackPanel x:Name="ProductView"/>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+
+</Window>
